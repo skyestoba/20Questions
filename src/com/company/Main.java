@@ -1,4 +1,5 @@
 package com.company;
+import java.util.Objects;
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -9,7 +10,15 @@ public class Main {
         int roboNum = (int)(Math.random()*100);
         extracted(roboNum);
         System.out.println("You win!");
-
+        System.out.println("Do you want to play again?");
+        Scanner scan = new Scanner(System.in);
+        String ans = scan.nextLine();
+        if(Objects.equals(ans, "yes")){
+            extracted(roboNum);
+        }
+        if (Objects.equals(ans, "no")) {
+            System.out.println("Good game friend <3");
+        }
     }
 
     private static void extracted(int roboNum) {
